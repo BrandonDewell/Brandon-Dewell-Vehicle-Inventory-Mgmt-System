@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProductMenuController">
+   <children>
+      <TextField fx:id="mPrMProductSearchTxtFld" layoutX="719.0" layoutY="21.0" onAction="#onActionMPSearchPartsTV1" prefHeight="25.0" prefWidth="225.0" promptText="Search by Part ID or Part Name" />
+      <Label layoutX="59.0" layoutY="59.0" text="Modify Product">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <VBox layoutX="59.0" layoutY="125.0" prefHeight="350.0" prefWidth="360.0">
+         <children>
+            <GridPane vgap="20.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" prefWidth="20.0" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="ID" />
+                  <Label text="Name" GridPane.rowIndex="1" />
+                  <Label text="Inv" GridPane.rowIndex="2" />
+                  <Label text="Price" GridPane.rowIndex="3" />
+                  <TextField fx:id="mPrMProductIdTxtFld" disable="true" maxWidth="200.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="mPrMProductNameTxtFld" maxWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="mPrMProductInvTxtFld" maxWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="mPrMProductPriceTxtFld" maxWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="45.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="mPrMProductMaxTxtFld" maxWidth="100.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="mPrMProductMinTxtFld" maxWidth="100.0" GridPane.columnIndex="3" />
+                  <Label text="Min" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Max" />
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <TableView fx:id="mPrMProductTableView1" layoutX="544.0" layoutY="59.0" prefHeight="150.0" prefWidth="400.0">
+         <columns>
+            <TableColumn fx:id="mPrMProductTV1PartIdCol" prefWidth="75.0" text="Part ID" />
+            <TableColumn fx:id="mPrMProductTV1PartNameCol" prefWidth="100.0" text="Part Name" />
+            <TableColumn fx:id="mPrMProductTV1InvLevelCol" prefWidth="101.0" text="Inventory Level" />
+            <TableColumn fx:id="mPrMProductTV1PriceCol" prefWidth="123.0" text="Price / Cost per Unit" />
+         </columns>
+      </TableView>
+      <TableView fx:id="mPrMProductTableView2" layoutX="544.0" layoutY="310.0" prefHeight="150.0" prefWidth="400.0">
+         <columns>
+            <TableColumn fx:id="mPrMProductTV2PartIdCol" prefWidth="75.0" text="Part ID" />
+            <TableColumn fx:id="mPrMProductTV2PartNameCol" prefWidth="100.0" text="Part Name" />
+            <TableColumn fx:id="mPrMProductTV2InvLevelCol" prefWidth="101.0" text="Inventory Level" />
+            <TableColumn fx:id="mPrMProductTV2PriceCol" prefWidth="123.0" text="Price / Cost per Unit" />
+         </columns>
+      </TableView>
+      <Button fx:id="mPrMAddButton" layoutX="832.0" layoutY="225.0" mnemonicParsing="false" onAction="#onActionMPAddPartToAssocParts" text="Add" />
+      <Button fx:id="mPrMRemoveAssocPartButton" layoutX="779.0" layoutY="475.0" mnemonicParsing="false" onAction="#onActionMPRemoveAssocPartFromProduct" text="Remove Associated Part" />
+      <Button fx:id="mPrMSaveButton" layoutX="779.0" layoutY="532.0" mnemonicParsing="false" onAction="#onActionSaveProduct" text="Save" />
+      <Button fx:id="mPrMCancelButton" layoutX="871.0" layoutY="532.0" mnemonicParsing="false" onAction="#onActionDisplayMainMenu" text="Cancel" />
+   </children>
+</AnchorPane>
